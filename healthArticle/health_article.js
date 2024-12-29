@@ -6,6 +6,10 @@ xhr.open('GET', url, true);
 
 xhr.responseType = 'json';
 
+xhr.onerror = function() {
+    console.log("error")
+};
+
 xhr.onload = function() {
     var articles = xhr.response.articles;
     var articlesDiv = document.getElementById('articles');
